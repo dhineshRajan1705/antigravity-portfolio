@@ -4,7 +4,7 @@ import Typewriter from "typewriter-effect";
 import { Button } from "../ui/button";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import { supabase } from "../../lib/supabase";
+import { supabase, isSupabaseConfigured } from "../../lib/supabase";
 
 export function Hero() {
     const { t } = useTranslation();
@@ -17,8 +17,13 @@ export function Hero() {
         const userLiked = localStorage.getItem('hasLiked') === 'true';
         setHasLiked(userLiked);
 
-        // Fetch current like count from Supabase
+        // Fetch current like count
         fetchLikeCount();
+
+        // Only subscribe to real-time updates if Supabase is configured
+        if (!isSupabaseConfigured) {
+            return;
+        }
 
         // Subscribe to real-time updates
         const channel = supabase
@@ -30,7 +35,7 @@ export function Hero() {
                     schema: 'public',
                     table: 'site_likes'
                 },
-                (payload) => {
+                (payload: any) => {
                     if (payload.new && typeof payload.new === 'object' && 'like_count' in payload.new) {
                         setLikeCount(payload.new.like_count as number);
                     }
@@ -44,6 +49,13 @@ export function Hero() {
     }, []);
 
     const fetchLikeCount = async () => {
+        // If Supabase is not configured, use localStorage only
+        if (!isSupabaseConfigured) {
+            const localCount = parseInt(localStorage.getItem('likeCount') || '0', 10);
+            setLikeCount(localCount);
+            return;
+        }
+
         try {
             const { data, error } = await supabase
                 .from('site_likes')
@@ -62,7 +74,6 @@ export function Hero() {
             const localCount = parseInt(localStorage.getItem('likeCount') || '0', 10);
             setLikeCount(localCount);
         }
-
     };
 
     const handleLike = async () => {
@@ -73,6 +84,12 @@ export function Hero() {
         setHasLiked(newLikedState);
         setLikeCount(prev => prev + increment);
         localStorage.setItem('hasLiked', newLikedState.toString());
+
+        // If Supabase is not configured, only use localStorage
+        if (!isSupabaseConfigured) {
+            localStorage.setItem('likeCount', (likeCount + increment).toString());
+            return;
+        }
 
         try {
             // Update database
@@ -109,8 +126,8 @@ export function Hero() {
             >
                 <Heart
                     className={`w-5 h-5 transition-all duration-300 ${hasLiked
-                            ? 'text-pink-500 fill-pink-500 scale-110'
-                            : 'text-pink-400 dark:text-pink-500 group-hover:fill-pink-400 dark:group-hover:fill-pink-500'
+                        ? 'text-pink-500 fill-pink-500 scale-110'
+                        : 'text-pink-400 dark:text-pink-500 group-hover:fill-pink-400 dark:group-hover:fill-pink-500'
                         }`}
                 />
                 <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">
