@@ -1,0 +1,149 @@
+{
+  "hero": {
+    "badge": "Available for new opportunities",
+    "greeting": "Hi, I'm",
+    "name": "Dhinesh rajan T",
+    "roles": {
+      "role1": "Senior Software Engineer",
+      "role2": "React Specialist",
+      "role3": "Zoho Developer",
+      "role4": "Frontend Architect"
+    },
+    "tagline": "Innovate, Iterate, Integrate. Pioneering",
+    "taglineBold": "React Frontend Development",
+    "description": "Specialized in building scalable, high-performance web applications and Low-Code solutions.",
+    "contactBtn": "Contact Me",
+    "downloadBtn": "Download CV"
+  },
+  "experience": {
+    "title": "Work Experience",
+    "experiences": [
+      {
+        "role": "Senior Software Engineer",
+        "company": "Softura",
+        "date": "Dec 2024 – Present",
+        "description": "Leading frontend development initiatives and architecting scalable React solutions."
+      },
+      {
+        "role": "Software Engineer",
+        "company": "Softura",
+        "date": "Nov 2021 – Dec 2024",
+        "description": "Developed and maintained complex web applications using React and Modern Web Technologies."
+      },
+      {
+        "role": "Software Developer",
+        "company": "Softura",
+        "date": "Dec 2020 – Nov 2021",
+        "description": "Full-stack development contribution and process automation."
+      },
+      {
+        "role": "Software Developer",
+        "company": "Softura",
+        "date": "Aug 2018 – Dec 2020",
+        "description": "Started career building foundational web solutions and gained expertise in core development practices."
+      }
+    ]
+  },
+  "skills": {
+    "title": "My Expertise",
+    "subtitle": "I leverage the latest technologies to build scalable, secure, and performant web applications.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend & Tools",
+      "lowcode": "Low-Code",
+      "mobile": "Mobile & Other"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Showcasing real-world applications built with cutting-edge technology stacks.",
+    "filters": {
+      "all": "All",
+      "react": "React",
+      "fullstack": "Full Stack",
+      "lowcode": "Low-Code"
+    },
+    "viewDetails": "View Details",
+    "demo": "Live Demo",
+    "code": "View Code",
+    "close": "Close",
+    "features": "Key Features",
+    "techStack": "Tech Stack",
+    "items": [
+      {
+        "title": "Zoho-React Integration Portal",
+        "category": "Full Stack",
+        "description": "Enterprise portal seamless bridging Zoho Creator data with a high-performance React frontend.",
+        "longDescription": "A custom ERP solution designed to overcome the UI limitations of standard low-code platforms. This portal fetches data from Zoho Creator via REST APIs and presents it in a highly interactive, custom-styled React dashboard. It features real-time synchronization, custom workflows, and a role-based access control system.",
+        "features": [
+          "Real-time bi-directional data sync with Zoho Creator",
+          "Custom Data Grid with filtering, sorting, and export",
+          "Role-Based Access Control (RBAC) securely managed",
+          "Automated PDF generation and reporting workflows"
+        ]
+      },
+      {
+        "title": "Enterprise Task Master",
+        "category": "React",
+        "description": "Advanced project management tool with Kanban boards and Gantt charts.",
+        "longDescription": "A sophisticated project management application built for large teams. It features a high-performance drag-and-drop Kanban board, interactive Gantt timelines for resource planning, and real-time collaboration using WebSockets. Optimized for rendering thousands of tasks without performance lag.",
+        "features": [
+          "Drag-and-drop Kanban board (dnd-kit)",
+          "Interactive SVG-based Gantt Charts",
+          "Real-time collaboration (Socket.io)",
+          "Offline support with PWA capabilities"
+        ]
+      },
+      {
+        "title": "FinTech Analytics Suite",
+        "category": "React",
+        "description": "Real-time financial data visualization dashboard with massive data handling.",
+        "longDescription": "A high-frequency trading dashboard designed for financial analysts. It processes and visualizes massive streams of stock and crypto data in real-time. Leverages Web Workers for data processing to keep the UI thread unblocked and smooth.",
+        "features": [
+          "High-performance charts (Recharts/D3.js)",
+          "Live WebSocket data feeds",
+          "Customizable widget layout",
+          "Dark mode optimized for multiple screens"
+        ]
+      },
+      {
+        "title": "Creator Low-Code Enhancer",
+        "category": "Low-Code",
+        "description": "A suite of custom widgets and scripts enhancing Zoho Creator applications.",
+        "longDescription": "A collection of custom-built widgets (React-based) embedded within Zoho Creator to provide functionality not natively available. Includes custom calendar views, inventory scanners, and interactive maps.",
+        "features": [
+          "Embedded React Widgets in Zoho",
+          "Custom Deluge Scripts for complex logic",
+          "Barcode/QR Code scanner integration",
+          "Interactive Google Maps integration"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind or want to discuss the latest tech? I'm always open to new opportunities and interesting conversations.",
+    "emailTitle": "Email Me",
+    "emailSubtitle": "I'll get back to you within 24 hours.",
+    "connectTitle": "Connect",
+    "connectSubtitle": "Let's connect on social media.",
+    "form": {
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Your Email",
+      "messagePlaceholder": "Your Message",
+      "submitBtn": "Send Message",
+      "sending": "Sending...",
+      "successTitle": "Message sent successfully!",
+      "successDesc": "I'll get back to you as soon as possible.",
+      "errorTitle": "Failed to send message.",
+      "errorDesc": "Please try again later or email me directly."
+    }
+  },
+  "header": {
+    "home": "Home",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  }
+}

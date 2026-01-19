@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #020617;
+  --color-dark-card: rgba(2, 6, 23, 0.7);
+
+  --color-primary: #6366f1;
+  --color-primary-foreground: #ffffff;
+
+  --color-neon-blue: #4DD7FA;
+  --color-neon-purple: #A855F7;
+
+  --animate-fade-in: fadeIn 0.5s ease-out;
+  --animate-slide-up: slideUp 0.5s ease-out;
+  --animate-pulse-glow: pulseGlow 2s infinite;
+  --animate-spin-slow: spin 8s linear infinite;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulseGlow {
+
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 10px #4DD7FA;
+    }
+
+    50% {
+      opacity: 0.5;
+      box-shadow: 0 0 20px #4DD7FA;
+    }
+  }
+}
+
+/* Enable class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply antialiased text-slate-900 bg-slate-50 transition-colors duration-300;
+  }
+
+  /* Explicitly define dark mode overrides using the variant */
+  :root.dark body {
+    @apply text-slate-100 bg-[#020617];
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 shadow-lg;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-md bg-black/30 border border-white/10 shadow-lg;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(77, 215, 250, 0.5);
+  }
+}

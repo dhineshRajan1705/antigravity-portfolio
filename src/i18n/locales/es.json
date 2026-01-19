@@ -1,0 +1,149 @@
+{
+  "hero": {
+    "badge": "Disponible para nuevas oportunidades",
+    "greeting": "Hola, soy",
+    "name": "Dhinesh rajan T",
+    "roles": {
+      "role1": "Ingeniero de Software Senior",
+      "role2": "Especialista en React",
+      "role3": "Desarrollador Zoho",
+      "role4": "Arquitecto Frontend"
+    },
+    "tagline": "Innovar, Iterar, Integrar. Pionero en",
+    "taglineBold": "Desarrollo Frontend con React",
+    "description": "Especializado en la creación de aplicaciones web escalables, de alto rendimiento y soluciones Low-Code.",
+    "contactBtn": "Contáctame",
+    "downloadBtn": "Descargar CV"
+  },
+  "experience": {
+    "title": "Experiencia Laboral",
+    "experiences": [
+      {
+        "role": "Ingeniero de Software Senior",
+        "company": "Softura",
+        "date": "Dic 2024 – Presente",
+        "description": "Liderando iniciativas de desarrollo frontend y arquitectura de soluciones escalables en React."
+      },
+      {
+        "role": "Ingeniero de Software",
+        "company": "Softura",
+        "date": "Nov 2021 – Dic 2024",
+        "description": "Desarrollo y mantenimiento de aplicaciones web complejas utilizando React y tecnologías web modernas."
+      },
+      {
+        "role": "Desarrollador de Software",
+        "company": "Softura",
+        "date": "Dic 2020 – Nov 2021",
+        "description": "Contribución al desarrollo full-stack y automatización de procesos."
+      },
+      {
+        "role": "Desarrollador de Software",
+        "company": "Softura",
+        "date": "Ago 2018 – Dic 2020",
+        "description": "Inicio de carrera construyendo soluciones web fundamentales y adquiriendo experiencia en prácticas de desarrollo esenciales."
+      }
+    ]
+  },
+  "skills": {
+    "title": "Mi Experiencia",
+    "subtitle": "Aprovecho las últimas tecnologías para crear aplicaciones web escalables, seguras y de alto rendimiento.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend y Herramientas",
+      "lowcode": "Low-Code",
+      "mobile": "Móvil y Otros"
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Presentando aplicaciones del mundo real construidas con pilas tecnológicas de vanguardia.",
+    "filters": {
+      "all": "Todos",
+      "react": "React",
+      "fullstack": "Full Stack",
+      "lowcode": "Low-Code"
+    },
+    "viewDetails": "Ver Detalles",
+    "demo": "Demo en Vivo",
+    "code": "Ver Código",
+    "close": "Cerrar",
+    "features": "Características Clave",
+    "techStack": "Stack Tecnológico",
+    "items": [
+      {
+        "title": "Portal de Integración Zoho-React",
+        "category": "Full Stack",
+        "description": "Portal empresarial que conecta perfectamente los datos de Zoho Creator con un frontend React de alto rendimiento.",
+        "longDescription": "Una solución ERP personalizada diseñada para superar las limitaciones de UI de las plataformas low-code estándar. Este portal obtiene datos de Zoho Creator a través de API REST y los presenta en un panel de React altamente interactivo y con estilo personalizado. Incluye sincronización en tiempo real, flujos de trabajo personalizados y un sistema de control de acceso basado en roles.",
+        "features": [
+          "Sincronización de datos bidireccional en tiempo real con Zoho Creator",
+          "Data Grid personalizado con filtrado, ordenamiento y exportación",
+          "Control de Acceso Basado en Roles (RBAC) gestionado de forma segura",
+          "Generación automatizada de PDF y flujos de trabajo de informes"
+        ]
+      },
+      {
+        "title": "Enterprise Task Master",
+        "category": "React",
+        "description": "Herramienta avanzada de gestión de proyectos con tableros Kanban y gráficos Gantt.",
+        "longDescription": "Una aplicación sofisticada de gestión de proyectos diseñada para equipos grandes. Cuenta con un tablero Kanban de arrastrar y soltar de alto rendimiento, líneas de tiempo Gantt interactivas para la planificación de recursos y colaboración en tiempo real mediante WebSockets. Optimizado para renderizar miles de tareas sin retrasos de rendimiento.",
+        "features": [
+          "Tablero Kanban de arrastrar y soltar (dnd-kit)",
+          "Gráficos Gantt interactivos basados en SVG",
+          "Colaboración en tiempo real (Socket.io)",
+          "Soporte sin conexión con capacidades PWA"
+        ]
+      },
+      {
+        "title": "Suite de Análisis FinTech",
+        "category": "React",
+        "description": "Panel de visualización de datos financieros en tiempo real con manejo masivo de datos.",
+        "longDescription": "Un panel de trading de alta frecuencia diseñado para analistas financieros. Procesa y visualiza flujos masivos de datos de acciones y criptomonedas en tiempo real. Aprovecha Web Workers para el procesamiento de datos para mantener el hilo de UI desbloqueado y fluido.",
+        "features": [
+          "Gráficos de alto rendimiento (Recharts/D3.js)",
+          "Feeds de datos en vivo WebSocket",
+          "Diseño de widget personalizable",
+          "Modo oscuro optimizado para múltiples pantallas"
+        ]
+      },
+      {
+        "title": "Potenciador Low-Code Creator",
+        "category": "Low-Code",
+        "description": "Un conjunto de widgets y scripts personalizados que mejoran las aplicaciones de Zoho Creator.",
+        "longDescription": "Una colección de widgets personalizados (basados en React) integrados en Zoho Creator para proporcionar funcionalidades que no están disponibles de forma nativa. Incluye vistas de calendario personalizadas, escáneres de inventario y mapas interactivos.",
+        "features": [
+          "Widgets React integrados en Zoho",
+          "Scripts Deluge personalizados para lógica compleja",
+          "Integración de escáner de código de barras/QR",
+          "Integración interactiva de Google Maps"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "subtitle": "¿Tienes un proyecto en mente o quieres discutir sobre la última tecnología? Siempre estoy abierto a nuevas oportunidades y conversaciones interesantes.",
+    "emailTitle": "Envíame un Email",
+    "emailSubtitle": "Te responderé en 24 horas.",
+    "connectTitle": "Conectar",
+    "connectSubtitle": "Conectemos en redes sociales.",
+    "form": {
+      "namePlaceholder": "Tu Nombre",
+      "emailPlaceholder": "Tu Email",
+      "messagePlaceholder": "Tu Mensaje",
+      "submitBtn": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "successTitle": "¡Mensaje enviado con éxito!",
+      "successDesc": "Te responderé lo antes posible.",
+      "errorTitle": "Error al enviar el mensaje.",
+      "errorDesc": "Por favor, inténtalo de nuevo más tarde o envíame un email directamente."
+    }
+  },
+  "header": {
+    "home": "Inicio",
+    "experience": "Experiencia",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  }
+}
