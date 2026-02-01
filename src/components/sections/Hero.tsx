@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Linkedin, Mail, Heart } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Download, Github, Linkedin, Mail, Heart, X } from "lucide-react";
 import Typewriter from "typewriter-effect";
 import { Button } from "../ui/button";
 import { useTranslation } from "react-i18next";
@@ -10,12 +10,18 @@ export function Hero() {
     const { t } = useTranslation();
     const [likeCount, setLikeCount] = useState(0);
     const [hasLiked, setHasLiked] = useState(false);
+    const [showNameModal, setShowNameModal] = useState(false);
+    const [userName, setUserName] = useState("");
 
 
     useEffect(() => {
         // Check if user has already liked (from localStorage)
         const userLiked = localStorage.getItem('hasLiked') === 'true';
         setHasLiked(userLiked);
+
+        // Load saved name
+        const savedName = localStorage.getItem('userName') || '';
+        setUserName(savedName);
 
         // Fetch current like count
         fetchLikeCount();
@@ -78,6 +84,17 @@ export function Hero() {
 
     const handleLike = async () => {
         const newLikedState = !hasLiked;
+
+        // If liking for the first time and no name saved, show modal
+        if (newLikedState && !userName) {
+            setShowNameModal(true);
+            return;
+        }
+
+        await performLike(newLikedState);
+    };
+
+    const performLike = async (newLikedState: boolean) => {
         const increment = newLikedState ? 1 : -1;
 
         // Optimistic update
@@ -99,12 +116,28 @@ export function Hero() {
             });
 
             if (error) throw error;
+
+            // If liking, save the name to database
+            if (newLikedState && userName) {
+                await supabase.from('likes_log').insert({
+                    user_name: userName,
+                    liked_at: new Date().toISOString()
+                });
+            }
         } catch (error) {
             console.error('Error updating like count:', error);
             // Revert on error
             setHasLiked(!newLikedState);
             setLikeCount(prev => prev - increment);
             localStorage.setItem('hasLiked', (!newLikedState).toString());
+        }
+    };
+
+    const handleNameSubmit = () => {
+        if (userName.trim()) {
+            localStorage.setItem('userName', userName.trim());
+            setShowNameModal(false);
+            performLike(true);
         }
     };
 
@@ -116,13 +149,13 @@ export function Hero() {
                 <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-neon-blue/20 rounded-full blur-[100px] animate-pulse-glow delay-1000" />
             </div>
 
-            {/* Like Button - Bottom Left */}
+            {/* Like Button - Responsive positioning */}
             <motion.button
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
                 onClick={handleLike}
-                className="absolute bottom-8 left-8 flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-pink-500/10 to-rose-500/10 dark:from-pink-500/20 dark:to-rose-500/20 border border-pink-200 dark:border-pink-800 hover:from-pink-500/20 hover:to-rose-500/20 dark:hover:from-pink-500/30 dark:hover:to-rose-500/30 transition-all duration-300 hover:scale-110 cursor-pointer group relative"
+                className="fixed bottom-4 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0 md:bottom-8 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-pink-500/10 to-rose-500/10 dark:from-pink-500/20 dark:to-rose-500/20 border border-pink-200 dark:border-pink-800 hover:from-pink-500/20 hover:to-rose-500/20 dark:hover:from-pink-500/30 dark:hover:to-rose-500/30 transition-all duration-300 hover:scale-110 cursor-pointer group relative backdrop-blur-sm"
             >
                 <Heart
                     className={`w-5 h-5 transition-all duration-300 ${hasLiked
@@ -135,10 +168,75 @@ export function Hero() {
                 </span>
 
                 {/* Hover Tooltip */}
-                <span className="absolute left-full ml-3 px-3 py-1.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+                <span className="absolute bottom-full mb-2 md:left-full md:bottom-auto md:ml-3 md:mb-0 px-3 py-1.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
                     {hasLiked ? '💔 Unlike' : '❤️ Like this site!'}
                 </span>
             </motion.button>
+
+            {/* Name Input Modal */}
+            <AnimatePresence>
+                {showNameModal && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] flex items-center justify-center p-4"
+                        onClick={() => setShowNameModal(false)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            className="bg-white dark:bg-slate-900 rounded-2xl p-6 md:p-8 max-w-md w-full shadow-2xl border border-slate-200 dark:border-slate-800"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="flex items-center justify-between mb-4">
+                                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                                    ❤️ Thanks for the love!
+                                </h3>
+                                <button
+                                    onClick={() => setShowNameModal(false)}
+                                    className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
+                                >
+                                    <X className="w-5 h-5 text-slate-500" />
+                                </button>
+                            </div>
+
+                            <p className="text-slate-600 dark:text-slate-400 mb-6">
+                                Mind sharing your name? I'd love to know who's supporting my work! 🙏
+                            </p>
+
+                            <input
+                                type="text"
+                                value={userName}
+                                onChange={(e) => setUserName(e.target.value)}
+                                onKeyPress={(e) => e.key === 'Enter' && handleNameSubmit()}
+                                placeholder="Your name (optional)"
+                                className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:focus:ring-pink-400 mb-4"
+                                autoFocus
+                            />
+
+                            <div className="flex gap-3">
+                                <button
+                                    onClick={() => {
+                                        setShowNameModal(false);
+                                        performLike(true);
+                                    }}
+                                    className="flex-1 px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors font-medium"
+                                >
+                                    Skip
+                                </button>
+                                <button
+                                    onClick={handleNameSubmit}
+                                    className="flex-1 px-4 py-3 rounded-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white hover:from-pink-600 hover:to-rose-600 transition-all font-medium shadow-lg hover:shadow-xl"
+                                >
+                                    Submit ❤️
+                                </button>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <div className="container px-4 md:px-6 flex flex-col items-center text-center space-y-8">
 
