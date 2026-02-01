@@ -12,11 +12,11 @@ const buttonVariants = cva(
             variant: {
                 default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_15px_rgba(99,102,241,0.5)] hover:shadow-[0_0_25px_rgba(99,102,241,0.6)]",
                 destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-                outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+                outline: "border-2 border-slate-400 dark:border-slate-700 bg-background hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white text-slate-700 dark:text-slate-300 font-semibold shadow-sm hover:shadow-md transition-all",
                 secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
                 ghost: "hover:bg-accent hover:text-accent-foreground",
                 link: "text-primary underline-offset-4 hover:underline",
-                neon: "bg-transparent border border-neon-blue text-neon-blue shadow-[inset_0_0_10px_rgba(77,215,250,0.2)] hover:shadow-[inset_0_0_20px_rgba(77,215,250,0.6),0_0_20px_rgba(77,215,250,0.4)] backdrop-blur-sm",
+                neon: "bg-background dark:bg-transparent border-2 border-slate-400 dark:border-neon-blue text-slate-700 dark:text-neon-blue font-semibold shadow-sm dark:shadow-[inset_0_0_10px_rgba(77,215,250,0.2)] hover:bg-slate-100 dark:hover:bg-transparent hover:shadow-md dark:hover:shadow-[inset_0_0_20px_rgba(77,215,250,0.6),0_0_20px_rgba(77,215,250,0.4)] hover:border-slate-500 dark:hover:border-neon-blue backdrop-blur-sm transition-all",
             },
             size: {
                 default: "h-10 px-4 py-2",

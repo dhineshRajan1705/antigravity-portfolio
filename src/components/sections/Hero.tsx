@@ -287,7 +287,7 @@ export function Hero() {
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Button>
                     </a>
-                    <Button size="lg" variant="outline" className="border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <Button size="lg" variant="outline">
                         <Download className="mr-2 h-4 w-4" />
                         {t('hero.downloadBtn')}
                     </Button>
@@ -317,7 +317,7 @@ export function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 1.0 }}
                     onClick={handleLike}
-                    className="mt-8 flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-pink-500/10 to-rose-500/10 dark:from-pink-500/20 dark:to-rose-500/20 border border-pink-200 dark:border-pink-800 hover:from-pink-500/20 hover:to-rose-500/20 dark:hover:from-pink-500/30 dark:hover:to-rose-500/30 transition-all duration-300 hover:scale-110 cursor-pointer group relative backdrop-blur-sm md:fixed md:left-8 md:top-1/2 md:-translate-y-1/2 md:mt-0"
+                    className="mt-8 flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-pink-100 to-rose-100 dark:from-pink-500/20 dark:to-rose-500/20 border-2 border-pink-400 dark:border-pink-800 hover:from-pink-200 hover:to-rose-200 dark:hover:from-pink-500/30 dark:hover:to-rose-500/30 hover:border-pink-500 dark:hover:border-pink-700 transition-all duration-300 hover:scale-110 cursor-pointer group relative backdrop-blur-sm shadow-md hover:shadow-lg md:fixed md:left-8 md:top-1/2 md:-translate-y-1/2 md:mt-0"
                 >
                     <Heart
                         className={`w-5 h-5 transition-all duration-300 ${hasLiked
@@ -325,7 +325,7 @@ export function Hero() {
                             : 'text-pink-400 dark:text-pink-500 group-hover:fill-pink-400 dark:group-hover:fill-pink-500'
                             }`}
                     />
-                    <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">
+                    <span className="text-sm font-semibold text-slate-800 dark:text-slate-300">
                         {likeCount}
                     </span>
 
