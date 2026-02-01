@@ -149,29 +149,6 @@ export function Hero() {
                 <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-neon-blue/20 rounded-full blur-[100px] animate-pulse-glow delay-1000" />
             </div>
 
-            {/* Like Button - Responsive positioning */}
-            <motion.button
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                onClick={handleLike}
-                className="fixed bottom-4 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0 md:bottom-8 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-pink-500/10 to-rose-500/10 dark:from-pink-500/20 dark:to-rose-500/20 border border-pink-200 dark:border-pink-800 hover:from-pink-500/20 hover:to-rose-500/20 dark:hover:from-pink-500/30 dark:hover:to-rose-500/30 transition-all duration-300 hover:scale-110 cursor-pointer group relative backdrop-blur-sm"
-            >
-                <Heart
-                    className={`w-5 h-5 transition-all duration-300 ${hasLiked
-                        ? 'text-pink-500 fill-pink-500 scale-110'
-                        : 'text-pink-400 dark:text-pink-500 group-hover:fill-pink-400 dark:group-hover:fill-pink-500'
-                        }`}
-                />
-                <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">
-                    {likeCount}
-                </span>
-
-                {/* Hover Tooltip */}
-                <span className="absolute bottom-full mb-2 md:left-full md:bottom-auto md:ml-3 md:mb-0 px-3 py-1.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
-                    {hasLiked ? '💔 Unlike' : '❤️ Like this site!'}
-                </span>
-            </motion.button>
 
             {/* Name Input Modal */}
             <AnimatePresence>
@@ -238,7 +215,8 @@ export function Hero() {
                 )}
             </AnimatePresence>
 
-            <div className="container px-4 md:px-6 flex flex-col items-center text-center space-y-8">
+
+            <div className="container px-4 md:px-6 flex flex-col items-center text-center space-y-8 py-20">
 
                 {/* Intro Tag */}
                 <motion.div
@@ -332,6 +310,30 @@ export function Hero() {
                         </a>
                     ))}
                 </motion.div>
+
+                {/* Like Button - Below all content on mobile, fixed middle-left on desktop */}
+                <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 1.0 }}
+                    onClick={handleLike}
+                    className="mt-8 flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-pink-500/10 to-rose-500/10 dark:from-pink-500/20 dark:to-rose-500/20 border border-pink-200 dark:border-pink-800 hover:from-pink-500/20 hover:to-rose-500/20 dark:hover:from-pink-500/30 dark:hover:to-rose-500/30 transition-all duration-300 hover:scale-110 cursor-pointer group relative backdrop-blur-sm md:fixed md:left-8 md:top-1/2 md:-translate-y-1/2 md:mt-0"
+                >
+                    <Heart
+                        className={`w-5 h-5 transition-all duration-300 ${hasLiked
+                            ? 'text-pink-500 fill-pink-500 scale-110'
+                            : 'text-pink-400 dark:text-pink-500 group-hover:fill-pink-400 dark:group-hover:fill-pink-500'
+                            }`}
+                    />
+                    <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">
+                        {likeCount}
+                    </span>
+
+                    {/* Hover Tooltip */}
+                    <span className="absolute bottom-full mb-2 px-3 py-1.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+                        {hasLiked ? '💔 Unlike' : '❤️ Like this site!'}
+                    </span>
+                </motion.button>
             </div>
         </section>
     );
