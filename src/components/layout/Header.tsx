@@ -42,18 +42,19 @@ export function Header() {
             )}
         >
             {/* Name / Logo */}
-            <motion.div
+            <motion.a
+                href="#"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-xl font-bold tracking-tight"
+                className="text-xl font-bold tracking-tight flex-1 cursor-pointer"
             >
                 <span className="text-slate-800 dark:text-slate-100">Senior</span>
                 <span className="text-primary dark:text-teal-400">.Dev</span>
-            </motion.div>
+            </motion.a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex flex-1 justify-center items-center gap-8">
                 {navItems.map((item, i) => (
                     <motion.a
                         key={item.name}
@@ -70,7 +71,7 @@ export function Header() {
             </nav>
 
             {/* Actions */}
-            <div className="flex items-center gap-4">
+            <div className="flex flex-1 items-center justify-end gap-4">
                 <LanguageSwitcher />
                 <ThemeToggle />
                 <motion.a

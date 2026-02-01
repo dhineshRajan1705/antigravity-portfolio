@@ -11,7 +11,7 @@ import "@/i18n/config"
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <div className="min-h-screen bg-background font-sans transition-colors duration-300">
         <Toaster position="top-center" richColors />
         <Background3D />
