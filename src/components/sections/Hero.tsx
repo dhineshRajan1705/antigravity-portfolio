@@ -287,10 +287,12 @@ export function Hero() {
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Button>
                     </a>
-                    <Button size="lg" variant="outline">
-                        <Download className="mr-2 h-4 w-4" />
-                        {t('hero.downloadBtn')}
-                    </Button>
+                    <a href="/CV.pdf" download="Dhinesh_Rajan_CV.pdf">
+                        <Button size="lg" variant="outline">
+                            <Download className="mr-2 h-4 w-4" />
+                            {t('hero.downloadBtn')}
+                        </Button>
+                    </a>
                 </motion.div>
 
                 {/* Social Links */}

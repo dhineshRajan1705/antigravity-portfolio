@@ -61,7 +61,8 @@
       "all": "All",
       "react": "React",
       "fullstack": "Full Stack",
-      "lowcode": "Low-Code"
+      "lowcode": "Low-Code",
+      "platform": "Data Platform"
     },
     "viewDetails": "View Details",
     "demo": "Live Demo",
@@ -71,51 +72,121 @@
     "techStack": "Tech Stack",
     "items": [
       {
-        "title": "Zoho-React Integration Portal",
-        "category": "Full Stack",
-        "description": "Enterprise portal seamless bridging Zoho Creator data with a high-performance React frontend.",
-        "longDescription": "A custom ERP solution designed to overcome the UI limitations of standard low-code platforms. This portal fetches data from Zoho Creator via REST APIs and presents it in a highly interactive, custom-styled React dashboard. It features real-time synchronization, custom workflows, and a role-based access control system.",
-        "features": [
-          "Real-time bi-directional data sync with Zoho Creator",
-          "Custom Data Grid with filtering, sorting, and export",
-          "Role-Based Access Control (RBAC) securely managed",
-          "Automated PDF generation and reporting workflows"
-        ]
-      },
-      {
-        "title": "Enterprise Task Master",
+        "title": "Enterprise Web Applications (React.js)",
         "category": "React",
-        "description": "Advanced project management tool with Kanban boards and Gantt charts.",
-        "longDescription": "A sophisticated project management application built for large teams. It features a high-performance drag-and-drop Kanban board, interactive Gantt timelines for resource planning, and real-time collaboration using WebSockets. Optimized for rendering thousands of tasks without performance lag.",
+        "description": "Built and maintained 10+ enterprise-scale web applications using React.js with a modular, component-driven architecture.",
+        "longDescription": "Led the development of multiple large-scale enterprise applications, focusing on architectural scalability and performance. Transitioned legacy systems to modern React-based stacks, ensuring high code quality and maintainability.",
         "features": [
-          "Drag-and-drop Kanban board (dnd-kit)",
-          "Interactive SVG-based Gantt Charts",
-          "Real-time collaboration (Socket.io)",
-          "Offline support with PWA capabilities"
+          "Converted UI/UX designs into responsive, reusable React components",
+          "Implemented Redux Toolkit (createSlice, createAsyncThunk) for scalable state management",
+          "Integrated REST APIs and handled complex asynchronous data flows",
+          "Improved performance using lazy loading, code splitting, and memoization",
+          "Ensured cross-browser compatibility and mobile responsiveness",
+          "Used Storybook for UI documentation and component isolation",
+          "Reduced regressions through unit testing with Jest & React Testing Library"
         ]
       },
       {
-        "title": "FinTech Analytics Suite",
-        "category": "React",
-        "description": "Real-time financial data visualization dashboard with massive data handling.",
-        "longDescription": "A high-frequency trading dashboard designed for financial analysts. It processes and visualizes massive streams of stock and crypto data in real-time. Leverages Web Workers for data processing to keep the UI thread unblocked and smooth.",
-        "features": [
-          "High-performance charts (Recharts/D3.js)",
-          "Live WebSocket data feeds",
-          "Customizable widget layout",
-          "Dark mode optimized for multiple screens"
-        ]
-      },
-      {
-        "title": "Creator Low-Code Enhancer",
+        "title": "Zoho Creator – Business Automation",
         "category": "Low-Code",
-        "description": "A suite of custom widgets and scripts enhancing Zoho Creator applications.",
-        "longDescription": "A collection of custom-built widgets (React-based) embedded within Zoho Creator to provide functionality not natively available. Includes custom calendar views, inventory scanners, and interactive maps.",
+        "description": "Designed and delivered custom business automation applications using Zoho Creator to streamline enterprise workflows.",
+        "longDescription": "Specialized in delivering end-to-end automation for diverse business processes including HR, Finance, and Operations using the Zoho ecosystem. Focused on building secure, efficient, and user-friendly low-code solutions.",
         "features": [
-          "Embedded React Widgets in Zoho",
-          "Custom Deluge Scripts for complex logic",
-          "Barcode/QR Code scanner integration",
-          "Interactive Google Maps integration"
+          "Built custom forms, dashboards, reports, and approval workflows using Deluge",
+          "Implemented role-based access control (RBAC) for secure user management",
+          "Integrated Zoho Creator with Zoho CRM, Books, Desk, and third-party platforms",
+          "Automated data sync, notifications, and scheduled jobs",
+          "Developed secure API integrations using OAuth 2.0",
+          "Delivered end-user training and technical documentation"
+        ]
+      },
+      {
+        "title": "Custom Widgets & UI Enhancements",
+        "category": "Low-Code",
+        "description": "Enhanced Zoho applications by developing custom UI widgets for improved usability and insights.",
+        "longDescription": "Created sophisticated custom widgets that extend the native capabilities of Zoho platforms. These widgets provide real-time data visualization and interactive components that integrate seamlessly with the main applications.",
+        "features": [
+          "Built reusable widgets for dashboards and analytics",
+          "Embedded real-time visual components within Zoho Creator apps",
+          "Integrated widgets across multiple Zoho products",
+          "Optimized widget performance for faster load times and better UX"
+        ]
+      },
+      {
+        "title": "E-Commerce Web Applications",
+        "category": "React",
+        "description": "Developed front-end interfaces for E-commerce platforms focusing on performance and user experience.",
+        "longDescription": "Built robust E-commerce solutions with a focus on high conversion rates and smooth user journeys. Implemented modern features like product filtering, seamless checkout, and performance optimizations for mobile users.",
+        "features": [
+          "Built product listings, cart, and checkout interfaces",
+          "Created reusable UI components for design consistency",
+          "Optimized UI performance and SEO best practices",
+          "Collaborated with backend teams for seamless API integration"
+        ]
+      },
+      {
+        "title": "IoT & Manufacturing Dashboards",
+        "category": "React",
+        "description": "Created real-time dashboards for IoT and manufacturing systems to visualize operational data.",
+        "longDescription": "Developed complex data visualization platforms for industrial applications. These dashboards process high-frequency sensor data and present it through interactive, real-time charts to facilitate better operational decision-making.",
+        "features": [
+          "Displayed live sensor data and KPIs using interactive charts",
+          "Handled large datasets with performance optimizations",
+          "Ensured accuracy, responsiveness, and real-time updates",
+          "Improved decision-making through clear data visualization"
+        ]
+      },
+      {
+        "title": "Document & Compliance Systems",
+        "category": "React",
+        "description": "Developed enterprise-grade document management systems with compliance tracking.",
+        "longDescription": "Engineered secure document management solutions for compliance-heavy environments. Focused on clear audit trails, role-based workflows, and maintaining high standards of code quality and security.",
+        "features": [
+          "Implemented document lifecycle and role-based access workflows",
+          "Improved code quality by fixing SonarQube issues",
+          "Enhanced usability through accessibility and UI improvements",
+          "Ensured maintainability and coding standards compliance"
+        ]
+      },
+      {
+        "title": "Performance & Quality Assurance",
+        "category": "React",
+        "description": "Focused on performance, stability, and code quality across all projects.",
+        "longDescription": "Dedicated to maintaining the highest technical standards across the development lifecycle. Utilized advanced tools to audit performance and enforce best practices in clean code and cross-browser reliability.",
+        "features": [
+          "Improved performance scores using Google Lighthouse",
+          "Enforced clean code standards with ESLint, Stylelint, and SonarQube",
+          "Verified cross-browser compatibility using BrowserStack",
+          "Reduced production defects through proactive testing and debugging"
+        ]
+      },
+      {
+        "title": "Palantir Foundry – Data Pipelines & Custom UI",
+        "category": "Platform",
+        "description": "Worked on enterprise-grade data platforms using Palantir Foundry, building data pipelines, interactive UIs, and AI-powered workflows.",
+        "longDescription": "Designed and built enterprise-scale data solutions within the Palantir Foundry ecosystem. This involved creating complex data transformations and high-fidelity operational applications that bridge the gap between Big Data and actionable business decisions.",
+        "features": [
+          "Designed and built data pipelines using Pipeline Builder for large-scale datasets",
+          "Developed Workshop applications for data exploration and decision support",
+          "Created custom UI widgets integrated with Palantir APIs",
+          "Built React-based components to extend Foundry Workshop capabilities",
+          "Integrated AIP (Artificial Intelligence Platform) for intelligent data insights",
+          "Implemented secure API communication and optimized data flow",
+          "Collaborated to align UI behavior with backend data models",
+          "Ensured scalability and performance across large datasets"
+        ]
+      },
+      {
+        "title": "Palantir Custom Widgets & AIP Integrations",
+        "category": "Platform",
+        "description": "Developed custom widgets and extensions within Palantir Foundry to enhance user experience and AI-driven workflows.",
+        "longDescription": "Focused on extending the native capabilities of Palantir Foundry through custom React development and AI integration. Created specialized tools that leverage AIP to provide automated insights and intelligent recommendations directly within the user workflow.",
+        "features": [
+          "Built reusable widgets for dashboards and operational views",
+          "Integrated AIP-powered features such as automated insights",
+          "Enabled real-time data updates using Foundry APIs",
+          "Improved usability through custom UI enhancements",
+          "Ensured compliance with enterprise security and access controls"
         ]
       }
     ]

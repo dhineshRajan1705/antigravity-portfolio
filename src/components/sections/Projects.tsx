@@ -8,6 +8,8 @@ interface Project {
     id: number;
     title: string;
     category: string;
+    categoryKey: 'react' | 'lowcode' | 'platform';
+    role: string;
     image: string;
     description: string;
     longDescription: string;
@@ -19,89 +21,147 @@ interface Project {
 
 export function Projects() {
     const { t } = useTranslation();
-    const [activeFilter, setActiveFilter] = useState(t('projects.filters.all'));
+    const [activeFilter, setActiveFilter] = useState('all');
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-    
+
     const projects: Project[] = [
         {
             id: 1,
             title: t('projects.items.0.title'),
-            category: t('projects.filters.fullstack'),
+            category: t('projects.filters.react'),
+            categoryKey: 'react',
+            role: "Senior Software Engineer",
             image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
             description: t('projects.items.0.description'),
             longDescription: t('projects.items.0.longDescription'),
-            features: [
-                t('projects.items.0.features.0'),
-                t('projects.items.0.features.1'),
-                t('projects.items.0.features.2'),
-                t('projects.items.0.features.3')
-            ],
-            tech: ["React", "Zoho Creator API", "Node.js", "Tailwind CSS", "React Query"],
+            features: [0, 1, 2, 3, 4, 5, 6].map(i => t(`projects.items.0.features.${i}`)).filter(f => !f.includes('projects.items')),
+            tech: ["React.js", "TypeScript", "Redux Toolkit", "Material UI", "Ant Design", "SCSS", "Jest"],
             demo: "#",
             github: "#",
         },
         {
             id: 2,
             title: t('projects.items.1.title'),
-            category: t('projects.filters.react'),
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+            category: t('projects.filters.lowcode'),
+            categoryKey: 'lowcode',
+            role: "Zoho Product Developer",
+            image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
             description: t('projects.items.1.description'),
             longDescription: t('projects.items.1.longDescription'),
-            features: [
-                t('projects.items.1.features.0'),
-                t('projects.items.1.features.1'),
-                t('projects.items.1.features.2'),
-                t('projects.items.1.features.3')
-            ],
-            tech: ["React", "Redux Toolkit", "TypeScript", "Dnd-kit", "Socket.io"],
+            features: [0, 1, 2, 3, 4, 5].map(i => t(`projects.items.1.features.${i}`)).filter(f => !f.includes('projects.items')),
+            tech: ["Zoho Creator", "Deluge Script", "REST APIs", "OAuth 2.0", "Webhooks"],
             demo: "#",
             github: "#",
         },
         {
             id: 3,
             title: t('projects.items.2.title'),
-            category: t('projects.filters.react'),
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+            category: t('projects.filters.lowcode'),
+            categoryKey: 'lowcode',
+            role: "UI / Widget Developer",
+            image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80",
             description: t('projects.items.2.description'),
             longDescription: t('projects.items.2.longDescription'),
-            features: [
-                t('projects.items.2.features.0'),
-                t('projects.items.2.features.1'),
-                t('projects.items.2.features.2'),
-                t('projects.items.2.features.3')
-            ],
-            tech: ["React", "Recharts", "Web Workers", "Tailwind CSS", "Vite"],
+            features: [0, 1, 2, 3].map(i => t(`projects.items.2.features.${i}`)).filter(f => !f.includes('projects.items')),
+            tech: ["HTML/CSS", "JavaScript", "Deluge", "Zoho Widgets"],
             demo: "#",
             github: "#",
         },
         {
             id: 4,
             title: t('projects.items.3.title'),
-            category: t('projects.filters.lowcode'),
-            image: "https://images.unsplash.com/photo-1555421689-d68471e10463?w=800&q=80",
+            category: t('projects.filters.react'),
+            categoryKey: 'react',
+            role: "Front-End Developer",
+            image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80",
             description: t('projects.items.3.description'),
             longDescription: t('projects.items.3.longDescription'),
-            features: [
-                t('projects.items.3.features.0'),
-                t('projects.items.3.features.1'),
-                t('projects.items.3.features.2'),
-                t('projects.items.3.features.3')
-            ],
-            tech: ["Zoho Creator", "Deluge", "JavaScript", "HTML/CSS"],
+            features: [0, 1, 2, 3].map(i => t(`projects.items.3.features.${i}`)).filter(f => !f.includes('projects.items')),
+            tech: ["React.js", "JavaScript", "Bootstrap", "REST APIs", "SEO"],
+            demo: "#",
+            github: "#",
+        },
+        {
+            id: 5,
+            title: t('projects.items.4.title'),
+            category: t('projects.filters.react'),
+            categoryKey: 'react',
+            role: "Front-End Developer",
+            image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=800&q=80",
+            description: t('projects.items.4.description'),
+            longDescription: t('projects.items.4.longDescription'),
+            features: [0, 1, 2, 3].map(i => t(`projects.items.4.features.${i}`)).filter(f => !f.includes('projects.items')),
+            tech: ["React.js", "Chart.js", "ApexCharts", "amCharts", "REST APIs"],
+            demo: "#",
+            github: "#",
+        },
+        {
+            id: 6,
+            title: t('projects.items.5.title'),
+            category: t('projects.filters.react'),
+            categoryKey: 'react',
+            role: "Front-End Developer",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+            description: t('projects.items.5.description'),
+            longDescription: t('projects.items.5.longDescription'),
+            features: [0, 1, 2, 3].map(i => t(`projects.items.5.features.${i}`)).filter(f => !f.includes('projects.items')),
+            tech: ["React.js", "JavaScript", "HTML/CSS", "REST APIs", "SonarQube"],
+            demo: "#",
+            github: "#",
+        },
+        {
+            id: 7,
+            title: t('projects.items.6.title'),
+            category: t('projects.filters.react'),
+            categoryKey: 'react',
+            role: "Front-End Developer",
+            image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80", // Reliable Code
+            description: t('projects.items.6.description'),
+            longDescription: t('projects.items.6.longDescription'),
+            features: [0, 1, 2, 3].map(i => t(`projects.items.6.features.${i}`)).filter(f => !f.includes('projects.items')),
+            tech: ["Lighthouse", "ESLint", "SonarQube", "BrowserStack", "Jest"],
+            demo: "#",
+            github: "#",
+        },
+        {
+            id: 8,
+            title: t('projects.items.7.title'),
+            category: t('projects.filters.platform'),
+            categoryKey: 'platform',
+            role: "Front-End / Platform Engineer",
+            image: "/palantir-showcase.png",
+            description: t('projects.items.7.description'),
+            longDescription: t('projects.items.7.longDescription'),
+            features: [0, 1, 2, 3, 4, 5, 6, 7].map(i => t(`projects.items.7.features.${i}`)).filter(f => !f.includes('projects.items')),
+            tech: ["Palantir Foundry", "Workshop", "AIP", "React.js", "TypeScript", "REST APIs"],
+            demo: "#",
+            github: "#",
+        },
+        {
+            id: 9,
+            title: t('projects.items.8.title'),
+            category: t('projects.filters.platform'),
+            categoryKey: 'platform',
+            role: "Front-End Developer",
+            image: "/palantir-showcase.png",
+            description: t('projects.items.8.description'),
+            longDescription: t('projects.items.8.longDescription'),
+            features: [0, 1, 2, 3, 4].map(i => t(`projects.items.8.features.${i}`)).filter(f => !f.includes('projects.items')),
+            tech: ["React.js", "TypeScript", "Palantir APIs", "AIP", "Workshop"],
             demo: "#",
             github: "#",
         }
     ];
-    
+
     const filters = [
-        t('projects.filters.all'),
-        t('projects.filters.react'),
-        t('projects.filters.fullstack'),
-        t('projects.filters.lowcode')
+        { id: 'all', label: t('projects.filters.all') },
+        { id: 'react', label: t('projects.filters.react') },
+        { id: 'lowcode', label: t('projects.filters.lowcode') },
+        { id: 'platform', label: t('projects.filters.platform') }
     ];
 
     const filteredProjects = projects.filter((project) =>
-        activeFilter === "All" || project.category === activeFilter
+        activeFilter === 'all' || project.categoryKey === activeFilter
     );
 
     return (
@@ -118,14 +178,14 @@ export function Projects() {
                     <div className="flex flex-wrap justify-center gap-2 mb-12">
                         {filters.map((filter) => (
                             <button
-                                key={filter}
-                                onClick={() => setActiveFilter(filter)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === filter
+                                key={filter.id}
+                                onClick={() => setActiveFilter(filter.id)}
+                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === filter.id
                                     ? "bg-primary text-white shadow-lg scale-105"
                                     : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700"
                                     }`}
                             >
-                                {filter}
+                                {filter.label}
                             </button>
                         ))}
                     </div>
@@ -232,7 +292,7 @@ export function Projects() {
                                         >
                                             <span>{selectedProject.category}</span>
                                             <span>•</span>
-                                            <span>Featured Project</span>
+                                            <span>{selectedProject.role}</span>
                                         </motion.div>
                                     </div>
                                 </div>
