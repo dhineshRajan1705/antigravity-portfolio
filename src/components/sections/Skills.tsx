@@ -1,41 +1,48 @@
 import { motion } from "framer-motion";
-import { Database, Layout, Smartphone, Terminal } from "lucide-react";
+import { Database, Layout, Smartphone, Terminal, Cpu } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export function Skills() {
     const { t } = useTranslation();
-    
+
     const skills = [
-    {
-        category: t('skills.categories.frontend'),
-        icon: Layout,
-        items: ["React.js", "TypeScript", "Redux", "Styled-components", "HTML5/CSS3", "Hooks"],
-        color: "text-blue-500",
-        bg: "bg-blue-500/10",
-    },
-    {
-        category: t('skills.categories.backend'),
-        icon: Database,
-        items: ["Node.js", "Docker", "REST APIs", "JSON", "Linux", "Software Design"],
-        color: "text-emerald-500",
-        bg: "bg-emerald-500/10",
-    },
-    {
-        category: t('skills.categories.lowcode'),
-        icon: Terminal,
-        items: ["Zoho Creator", "Zoho Projects", "Low-Code Platform"],
-        color: "text-orange-500",
-        bg: "bg-orange-500/10",
-    },
-    {
-        category: t('skills.categories.mobile'),
-        icon: Smartphone,
-        items: ["Responsive Design", "Front-End Development", "Teamwork", "Communication"],
-        color: "text-purple-500",
-        bg: "bg-purple-500/10",
-    },
-];
-    
+        {
+            category: t('skills.categories.frontend'),
+            icon: Layout,
+            items: ["React.js", "TypeScript", "Redux", "Styled-components", "HTML5/CSS3", "Hooks"],
+            color: "text-blue-500",
+            bg: "bg-blue-500/10",
+        },
+        {
+            category: t('skills.categories.backend'),
+            icon: Database,
+            items: ["Node.js", "Docker", "REST APIs", "JSON", "Linux", "Software Design"],
+            color: "text-emerald-500",
+            bg: "bg-emerald-500/10",
+        },
+        {
+            category: t('skills.categories.lowcode'),
+            icon: Terminal,
+            items: ["Zoho Creator", "Zoho Projects", "Low-Code Platform"],
+            color: "text-orange-500",
+            bg: "bg-orange-500/10",
+        },
+        {
+            category: t('skills.categories.platform'),
+            icon: Cpu,
+            items: ["Palantir Foundry", "Workshop", "Pipeline Builder", "AIP", "Palantir APIs"],
+            color: "text-indigo-500",
+            bg: "bg-indigo-500/10",
+        },
+        {
+            category: t('skills.categories.mobile'),
+            icon: Smartphone,
+            items: ["Responsive Design", "Front-End Development", "Teamwork", "Communication"],
+            color: "text-purple-500",
+            bg: "bg-purple-500/10",
+        },
+    ];
+
     return (
         <section id="expertise" className="py-20 relative">
             <div className="container px-4 md:px-6">
@@ -54,7 +61,7 @@ export function Skills() {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                     {skills.map((skill, index) => (
                         <motion.div
                             key={skill.category}

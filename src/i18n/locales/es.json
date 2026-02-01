@@ -51,7 +51,8 @@
       "frontend": "Frontend",
       "backend": "Backend y Herramientas",
       "lowcode": "Low-Code",
-      "mobile": "Móvil y Otros"
+      "mobile": "Móvil y Otros",
+      "platform": "Plataforma de Datos"
     }
   },
   "projects": {
