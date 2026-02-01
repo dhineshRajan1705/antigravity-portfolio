@@ -12,6 +12,7 @@ export function Skills() {
             items: ["React.js", "TypeScript", "Redux", "Styled-components", "HTML5/CSS3", "Hooks"],
             color: "text-blue-500",
             bg: "bg-blue-500/10",
+            bullet: "bg-blue-500",
         },
         {
             category: t('skills.categories.backend'),
@@ -19,6 +20,7 @@ export function Skills() {
             items: ["Node.js", "Docker", "REST APIs", "JSON", "Linux", "Software Design"],
             color: "text-emerald-500",
             bg: "bg-emerald-500/10",
+            bullet: "bg-emerald-500",
         },
         {
             category: t('skills.categories.lowcode'),
@@ -26,6 +28,7 @@ export function Skills() {
             items: ["Zoho Creator", "Zoho Projects", "Low-Code Platform"],
             color: "text-orange-500",
             bg: "bg-orange-500/10",
+            bullet: "bg-orange-500",
         },
         {
             category: t('skills.categories.platform'),
@@ -33,6 +36,7 @@ export function Skills() {
             items: ["Palantir Foundry", "Workshop", "Pipeline Builder", "AIP", "Palantir APIs"],
             color: "text-indigo-500",
             bg: "bg-indigo-500/10",
+            bullet: "bg-indigo-500",
         },
         {
             category: t('skills.categories.mobile'),
@@ -40,6 +44,7 @@ export function Skills() {
             items: ["Responsive Design", "Front-End Development", "Teamwork", "Communication"],
             color: "text-purple-500",
             bg: "bg-purple-500/10",
+            bullet: "bg-purple-500",
         },
     ];
 
@@ -78,7 +83,7 @@ export function Skills() {
                                 <ul className="space-y-2">
                                     {skill.items.map((item) => (
                                         <li key={item} className="flex items-center text-slate-600 dark:text-slate-400 text-sm">
-                                            <span className={`w-1.5 h-1.5 rounded-full mr-2 ${skill.bg.replace('/10', '')}`} />
+                                            <div className={`w-2 h-2 rounded-full mr-2 shrink-0 ${skill.bullet}`} />
                                             {item}
                                         </li>
                                     ))}
