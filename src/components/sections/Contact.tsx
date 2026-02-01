@@ -18,15 +18,16 @@ export function Contact() {
 
         setIsLoading(true);
 
-        // NOTE: Replace these with your actual EmailJS Service ID, Template ID, and Public Key
-        // You can get them at https://www.emailjs.com/
-        emailjs
-            .sendForm(
-                "service_79btxns",   // Replace with your Service ID
-                "template_tbxbtx1", // Replace with your Template ID
-                formRef.current,
-                "t0SWIpSs5LwIgouuZ"            // Replace with your Public Key
-            )
+        const serviceId = "service_79btxns";
+        const publicKey = "t0SWIpSs5LwIgouuZ";
+        const mainTemplate = "template_tbxbtx1";
+        const autoReplyTemplate = "template_byuzxnc";
+
+        // Send to owner and sender concurrently
+        Promise.all([
+            emailjs.sendForm(serviceId, mainTemplate, formRef.current, publicKey),
+            emailjs.sendForm(serviceId, autoReplyTemplate, formRef.current, publicKey)
+        ])
             .then(
                 () => {
                     toast.success(t('contact.form.successTitle'), {
@@ -35,7 +36,7 @@ export function Contact() {
                     formRef.current?.reset();
                 },
                 (error) => {
-                    console.error("FAILED...", error.text);
+                    console.error("FAILED...", error);
                     toast.error(t('contact.form.errorTitle'), {
                         description: t('contact.form.errorDesc'),
                     });
